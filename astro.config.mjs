@@ -4,6 +4,6 @@ import mdx from '@astrojs/mdx';
 
 // Update `site` to your deployed URL (e.g. https://yourdomain.com)
 export default defineConfig({
-  site: 'https://username.github.io',
+  site: 'https://sharikshaikh.me',
   integrations: [tailwind(), mdx()],
 });
