@@ -18,16 +18,13 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Detect and build site
-        run: |
-          if [ -f "Gemfile" ]; then
-            gem install bundler && bundle install && bundle exec jekyll build -d _site
-          elif [ -f "package.json" ] && grep -q "hugo" package.json; then
-            npm ci && npm run build
-          else
-            echo "No recognized static site generator found. Using raw files."
-            mkdir -p _site && cp -r _posts _pages assets _site/ 2>/dev/null || true
-          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm install
+      - run: npm run build
 
       - name: Comment preview URL
         uses: actions/github-script@v7
