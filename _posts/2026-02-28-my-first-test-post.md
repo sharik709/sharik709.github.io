@@ -1,4 +1,5 @@
 ---
+date: '2026-02-28'
 draft: true
 slug: my-first-test-post
 title: My First Test Post
