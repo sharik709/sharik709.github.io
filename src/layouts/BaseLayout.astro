@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A personal blog.' } = Astro.props;
+const siteTitle = 'My Blog'; // Update this to your name
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title === siteTitle ? title : `${title} — ${siteTitle}`}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen bg-white text-gray-900 font-sans antialiased">
+    <nav class="border-b border-gray-100 bg-white/95 backdrop-blur sticky top-0 z-10">
+      <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="font-bold text-gray-900 hover:text-blue-600 transition-colors text-lg">{siteTitle}</a>
+        <div class="flex gap-6 text-sm text-gray-500">
+          <a href="/" class="hover:text-gray-900 transition-colors">Posts</a>
+        </div>
+      </div>
+    </nav>
+    <slot />
+    <footer class="border-t border-gray-100 mt-24">
+      <div class="max-w-3xl mx-auto px-4 py-8 text-sm text-gray-400 flex justify-between items-center">
+        <span>© {new Date().getFullYear()} {siteTitle}</span>
+        <span>Built with <a href="https://astro.build" class="hover:text-gray-600 transition-colors">Astro</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
