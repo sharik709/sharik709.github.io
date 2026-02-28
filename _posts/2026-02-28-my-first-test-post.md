@@ -1,6 +1,6 @@
 ---
 date: '2026-02-28'
-draft: true
+draft: false
 slug: my-first-test-post
 title: My First Test Post
 ---
