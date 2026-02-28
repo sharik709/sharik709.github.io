@@ -1,4 +1,6 @@
 ---
+date: '2026-02-28'
+description: Most RAG systems don’t fail loudly.
 draft: true
 slug: most-rag-systems-dont-fail-loudly
 tags:
