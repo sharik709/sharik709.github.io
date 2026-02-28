@@ -1,0 +1,30 @@
+name: Publish Site
+
+on:
+  push:
+    branches: [main, master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and deploy
+        run: |
+          if [ -f "Gemfile" ]; then
+            gem install bundler && bundle install && bundle exec jekyll build -d _site
+          elif [ -f "package.json" ]; then
+            npm ci && npm run build
+          else
+            mkdir -p _site && cp -r _posts _pages assets _site/ 2>/dev/null || true
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
