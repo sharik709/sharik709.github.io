@@ -1,6 +1,8 @@
 ---
 draft: true
 slug: most-rag-systems-dont-fail-loudly
+tags:
+- rag
 title: Most RAG systems don’t fail loudly.
 ---
 
