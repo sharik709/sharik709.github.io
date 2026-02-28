@@ -101,7 +101,7 @@ title: Blog
 </style>
 
 <div class="md-blog-header">
-  <h1>{{ site.title | default: "Blog" }}</h1>
+  <h1>Writing</h1>
   {% if site.description %}<p>{{ site.description }}</p>{% endif %}
 </div>
 
