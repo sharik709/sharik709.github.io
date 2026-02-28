@@ -8,58 +8,72 @@ tags:
 title: Most RAG systems don’t fail loudly.
 ---
 
+# RAG Systems Rarely Fail Loudly
+
 Most RAG systems don’t fail loudly.
 
 They fail quietly.
 
-No errors.
-No alerts.
+No errors.  
+No alerts.  
 No outages.
 
 Just slightly worse answers, day after day.
 
+---
 
-This is what usually happens in production:
+## What Usually Happens in Production
 
-More documents get added.
-Old embeddings stay.
-Signal gets diluted.
+More documents get added.  
+Old embeddings stay.  
+Signal gets diluted.  
 Retrieval quality slowly drops.
 
 Nothing breaks.
-Trust does.
+
+**Trust does.**
+
+---
+
+## Why Traditional Monitoring Misses It
 
 Traditional monitoring doesn’t catch this.
 
-Uptime is green.
-Latency looks fine.
+Uptime is green.  
+Latency looks fine.  
 Costs are stable.
 
 But relevance is drifting.
 
+---
 
-RAG needs health checks, not just uptime checks.
+## RAG Needs Health Checks — Not Just Uptime Checks
 
-Things that actually matter:
- • retrieval recall trending
- • answer confidence over time
- • conflicting source frequency
- • “I don’t know” rate
- • document freshness impact
+The signals that actually matter:
 
-Without this, you only discover problems when users stop asking questions.
+- Retrieval recall trending
+- Answer confidence over time
+- Conflicting source frequency
+- “I don’t know” response rate
+- Document freshness impact
 
+Without this, problems are only discovered when users stop asking questions.
 
-This is not an LLM problem.
+---
 
-It’s a systems observability problem.
+## This Is Not an LLM Problem
 
+It’s a **systems observability problem**.
 
-If your RAG has no way to detect quiet degradation,
+If your RAG has no way to detect quiet degradation,  
 you don’t have a production system.
 
 You have a demo that aged.
 
+---
 
-RAG doesn’t break.
-It erodes.
+## The Reality
+
+**RAG doesn’t break.**
+
+**It erodes.**
