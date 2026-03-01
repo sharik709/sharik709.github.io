@@ -16,14 +16,14 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
   <div class="flex items-start justify-between gap-6">
     <div class="flex-1 min-w-0">
       <h2 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-        <a href={`/blog/${post.slug}`} class="focus:outline-none focus:underline">{title}</a>
+        <a href={`/posts/${post.slug}`} class="focus:outline-none focus:underline">{title}</a>
       </h2>
       {description && (
         <p class="text-gray-500 text-sm leading-relaxed mb-3 line-clamp-2">{description}</p>
       )}
       <div class="flex items-center gap-3 flex-wrap">
         <a
-          href={`/blog/${post.slug}`}
+          href={`/posts/${post.slug}`}
           class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
         >
           Read more &rarr;
